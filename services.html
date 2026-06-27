@@ -1,78 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-    </head>
-    <body><section class="menu">
-    <h1>Our Casual Sneakers Collection</h1>
+<head>
+    <meta charset="UTF-8" />
+    <title>KickStart - Casual Sneakers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div class="container">
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
 
-        <div class="card">
-            <img src="images/DiorxJordan.jpg" alt="Dior x Jordan">
-            <h3>Dior x Jordan</h3>
-            <p>Cloud Blue</p>
-            <h2>RM 2,499</h2>
-            <button>Buy Now</button>
-        </div>
+/* ===== MENU / NAVIGATION ===== */
+.menu {
+    background: #1a1a2e;
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+}
 
-        <div class="card">
-            <img src="images/adidas(orange.jpg)" alt="Adidas Orange">
-            <h3>Adidas</h3>
-            <p>Orange</p>
-            <h2>RM 399</h2>
-            <button>Buy Now</button>
-        </div>
+.menu h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-        <div class="card">
-            <img src="images/louisvuitton.jpg" alt="Louis Vuitton">
-            <h3>Louis Vuitton</h3>
-            <p>Dark Blue & White</p>
-            <h2>RM 3,799</h2>
-            <button>Buy Now</button>
-        </div>
+.menu h1 span {
+    color: #e94560;
+}
 
-        <div class="card">
-            <img src="images/adidas.jpg" alt="Adidas Grey">
-            <h3>Adidas</h3>
-            <p>Fog Grey</p>
-            <h2>RM 459</h2>
-            <button>Buy Now</button>
-        </div>
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
 
-        <div class="card">
-            <img src="images/maroon.jpg" alt="Nike Air">
-            <h3>Nike Air</h3>
-            <p>Maroon</p>
-            <h2>RM 499</h2>
-            <button>Buy Now</button>
-        </div>
+/* ===== CARD ===== */
+.card {
+    background: white;
+    width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    padding: 18px 15px 20px 15px;
+    transition: 0.3s;
+}
 
-        <div class="card">
-            <img src="images/mustard.jpg" alt="Nike Air">
-            <h3>Nike Air</h3>
-            <p>Mustard</p>
-            <h2>RM 499</h2>
-            <button>Buy Now</button>
-        </div>
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
 
-        <div class="card">
-            <img src="images/purple.jpg" alt="Adidas Purple">
-            <h3>Adidas</h3>
-            <p>Purple</p>
-            <h2>RM 429</h2>
-            <button>Buy Now</button>
-        </div>
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-        <div class="card">
-            <img src="images/green.jpg" alt="Nike Air">
-            <h3>Nike Air</h3>
-            <p>Green</p>
-            <h2>RM 499</h2>
-            <button>Buy Now</button>
-        </div>
+.card h3 {
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-top: 12px;
+}
 
+.card p {
+    font-size: 14px;
+    color: #888;
+    margin: 4px 0 8px 0;
+}
+
+.card h2 {
+    font-size: 20px;
+    color: #e94560;
+    margin: 8px 0 12px 0;
+}
+
+.card button {
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.card button:hover {
+    background: #e94560;
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .menu h1 {
+        font-size: 26px;
+    }
+
+    .container {
+        gap: 18px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu h1 {
+        font-size: 22px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- ===== MENU ===== -->
+<div class="menu">
+    <div class="brand">
+        <img src="logo.jpg" alt="KickStarLogo" style="height: 50px;">
+        Kick<span>Start</span>
     </div>
-</section></body>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- ===== PAGE TITLE ===== -->
+<div class="page-title">
+    <h1>Our Casual <span>Sneakers</span></h1>
+    <p>Comfortable styles for everyday wear</p>
+</div>
+
+<!-- ===== PRODUCTS ===== -->
+<div class="container">
+
+    <div class="card">
+        <img src="images/DiorxJordan.jpg" alt="Dior x Jordan">
+        <h3>Dior x Jordan</h3>
+        <p>Cloud Blue</p>
+        <h2>RM 2,499</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/adidas(orange.jpg)" alt="Adidas Orange">
+        <h3>Adidas</h3>
+        <p>Orange</p>
+        <h2>RM 399</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/louisvuitton.jpg" alt="Louis Vuitton">
+        <h3>Louis Vuitton</h3>
+        <p>Dark Blue & White</p>
+        <h2>RM 3,799</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/adidas.jpg" alt="Adidas Grey">
+        <h3>Adidas</h3>
+        <p>Fog Grey</p>
+        <h2>RM 459</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/maroon.jpg" alt="Nike Air">
+        <h3>Nike Air</h3>
+        <p>Maroon</p>
+        <h2>RM 499</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/mustard.jpg" alt="Nike Air">
+        <h3>Nike Air</h3>
+        <p>Mustard</p>
+        <h2>RM 499</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/purple.jpg" alt="Adidas Purple">
+        <h3>Adidas</h3>
+        <p>Purple</p>
+        <h2>RM 429</h2>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="images/green.jpg" alt="Nike Air">
+        <h3>Nike Air</h3>
+        <p>Green</p>
+        <h2>RM 499</h2>
+        <button>Buy Now</button>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    <p>© 2026 KickStart. All rights reserved.</p>
+</div>
+
+</body>
 </html>
