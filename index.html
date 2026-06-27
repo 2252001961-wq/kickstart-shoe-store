@@ -3,29 +3,450 @@
     <head>
         <meta charset="UTF-8" />
         <title>KickStart shoes store </title>
-        <link rel="stylesheet" href="style.css">
+        <style>
+        /* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* ===== HEADER / NAVIGATION ===== */
+header {
+    background: #1a1a2e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .menu {
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+header h1 {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+header h1 span {
+    color: #e94560;
+}
+
+header .icons {
+    color: white;
+    font-size: 22px;
+    letter-spacing: 8px;
+}
+
+header img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+header a:hover {
+    background: #e94560;
+    border-radius: 5px;
+}
+
+/* ===== TAGLINE SECTION ===== */
+section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a2e;
+    margin-top: 30px;
+}
+
+section h2 + p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ===== OFFER SECTION ===== */
+div h3 {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+div h3 span {
+    background: #e94560;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+div img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+div h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-top: 15px;
+}
+
+div p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+div p strong {
+    color: #e94560;
+    font-size: 20px;
+}
+
+div p span {
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+/* ===== SHOP NOW BUTTON ===== */
+.shop-btn {
+    display: block;
+    width: 200px;
+    margin: 15px auto;
+    background: #e94560;
+    color: white;
+    text-align: center;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background: #c7364f;
+    transform: scale(1.05);
+}
+
+/* ===== TRENDING SNEAKERS ===== */
+.shoe-card {
+    background: white;
+    max-width: 350px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.shoe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.shoe-card h3 {
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.shoe-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.shoe-card h4 {
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-top: 12px;
+}
+
+.shoe-card p strong {
+    color: #e94560;
+    font-size: 20px;
+}
+
+/* ===== CATEGORIES ===== */
+#category {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+#category h2 {
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+#category button {
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    margin: 5px 8px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#category button:hover {
+    background: #e94560;
+}
+
+/* ===== WHY CHOOSE US ===== */
+section .card {
+    background: white;
+    width: 220px;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+section .card p {
+    font-size: 16px;
+    color: #1a1a2e;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Center the cards */
+section:has(.card) {
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ===== STYLE FINDING FORM ===== */
+form {
+    max-width: 550px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+fieldset {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a2e;
+    padding: 0 10px;
+}
+
+fieldset p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+fieldset label {
+    font-weight: bold;
+    color: #1a1a2e;
+    font-size: 15px;
+}
+
+fieldset input[type="radio"] {
+    margin: 5px 5px 5px 0;
+}
+
+fieldset select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+fieldset select:focus {
+    border-color: #e94560;
+    outline: none;
+}
+
+fieldset a {
+    display: inline-block;
+    background: #e94560;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+fieldset a:hover {
+    background: #c7364f;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    header .menu {
+        display: block;
+        align-self: flex-start;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    header a {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    header .icons {
+        font-size: 18px;
+        letter-spacing: 5px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .shoe-card {
+        max-width: 100%;
+        margin: 15px 10px;
+    }
+
+    .shoe-card img {
+        height: 200px;
+    }
+
+    section .card {
+        width: 100%;
+        max-width: 280px;
+        margin: 8px auto;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    div img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    header .icons {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    section h2 + p {
+        font-size: 15px;
+    }
+
+    div h3 {
+        font-size: 22px;
+    }
+
+    div h2 {
+        font-size: 20px;
+    }
+
+    .shop-btn {
+        width: 160px;
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    #category button {
+        display: block;
+        width: 80%;
+        margin: 8px auto;
+    }
+
+    fieldset a {
+        display: block;
+        text-align: center;
+    }
+}
+        </style>
+        
     </head>
     <body>
-     <header class="navbar">
+     <header>
         <div class="menu">☰</div>
+        <h1> KickStart Welcomes You </h1>
          
         <div class="icons">
          🔍 👤 ❤️ 🛒
          </div>
-         <div class="logo">
-        <img src="kickstart-logo.jpeg" alt="kickstart logo" width="81">
-         </div>
-         <ul class="nav-links">
-        <li><a href="index.html" class="active">HOME</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="about us.html">ABOUT</a></li>
-        <li><a href="Gallery.html">GALLERY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        </ul>
+        <img src="logo.jpg" alt="kickstart logo" width="81">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="Gallery.html">GALLERY</a>
+        <a href="about us.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
     </header>
-    <section class="hero">
-     <h1> KickStart Welcomes You.</h1>
-     <h2>KickStart Every Journey. </h2><!--TAGLINE--->
+    <section>
+    <h2>KickStart Every Journey. </h2><!--TAGLINE--->
     <p> Comfort meets style in every step. </p><!---TAGLINE--->
     </section>
     <!---OFFER FEATURED TRENDING SHOE IMAGE (BIG)--->
@@ -36,7 +457,7 @@
      <p><strong>RM 709</strong></p>
      <p><span>Free Delivery</span></p>  
         <!---SHOP NOW BUTTON--->
-        <a href="services.html" class="shop-btn">Shop Now!</a>
+        <a href="" class="shop-btn">Shop Now!</a>
       </div>
         
      <!---OTHER FEATURED TRENDING SNEAKERS--->
@@ -136,6 +557,10 @@
         
       </fieldset>
      </form>
+        <!-- ===== FOOTER ===== -->
+<div class="footer">
+    <p>© 2026 KickStart. All rights reserved.</p>
+</div>
     </body>
     
 </html>
