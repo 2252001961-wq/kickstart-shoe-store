@@ -2,7 +2,345 @@
 <html lang="en">
 <head>
     <title>KickStart - Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+    /* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* ===== MENU / NAVIGATION (RIGHT SIDE) ===== */
+.menu {
+    background: #1a1a2e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.menu .brand img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.menu .brand span {
+    color: #e94560;
+}
+
+/* ===== NAVIGATION LINKS (RIGHT SIDE) ===== */
+.menu .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.menu .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.3s;
+    display: inline-block;
+    background: transparent;
+}
+
+.menu .nav-links a:hover {
+    background: #e94560;
+    transform: scale(1.05);
+}
+
+.menu .nav-links a.active {
+    background: #e94560;
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+}
+
+/* ===== PAGE TITLE ===== */
+.title {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title h1 {
+    font-size: 36px;
+}
+
+.title h1 span {
+    color: #e94560;
+}
+
+.title p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* ===== CONTACT INFO (LEFT) ===== */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-info h2 {
+    color: #1a1a2e;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #e94560;
+    margin-top: 8px;
+}
+
+.contact-info p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.contact-info strong {
+    color: #1a1a2e;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.contact-info .social-links {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 2px solid #eee;
+}
+
+.contact-info .social-links h3 {
+    color: #1a1a2e;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info .social-links a {
+    color: #e94560;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.contact-info .social-links a:hover {
+    color: #1a1a2e;
+    text-decoration: underline;
+}
+
+/* ===== CONTACT FORM (RIGHT) ===== */
+.contact-form {
+    flex: 1.5;
+    min-width: 280px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-form h2 {
+    color: #1a1a2e;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-form h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #e94560;
+    margin-top: 8px;
+}
+
+.contact-form label {
+    display: block;
+    color: #1a1a2e;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+    background: #fafafa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #e94560;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: #c7364f;
+    transform: scale(1.02);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .menu .brand {
+        font-size: 24px;
+    }
+
+    .menu .brand img {
+        height: 45px;
+    }
+
+    .menu .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .menu .nav-links a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .title h1 {
+        font-size: 28px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 25px;
+        margin: 25px auto;
+    }
+
+    .contact-info,
+    .contact-form {
+        min-width: 100%;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .menu .brand {
+        font-size: 22px;
+    }
+
+    .menu .brand img {
+        height: 40px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -12,11 +350,13 @@
             <img src="logo.jpg" alt="KickStarLogo" style="height: 85px;">
             Kick<span>Start</span>
         </div>
+        <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="about.html">About</a>
         <a href="gallery.html">Gallery</a>
+        <a href="about us.html">About</a>
         <a href="contact.html" class="active">Contact</a>
+        </div>
     </div>
 
     <!-- ===== PAGE TITLE ===== -->
@@ -68,6 +408,10 @@
         </div>
 
     </div>
+    <!-- ===== FOOTER ===== -->
+<div class="footer">
+    <p>© 2026 KickStart. All rights reserved.</p>
+</div>
 
  
 
