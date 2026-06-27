@@ -4,7 +4,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - SneakerHub</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+    /* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background: #1a1a2e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    background: #e94560;
+    border-radius: 5px;
+}
+
+.nav-links li a.active {
+    background: #e94560;
+    border-radius: 5px;
+}
+
+/* ===== ABOUT HEADER ===== */
+.about-header {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-header h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.about-header p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* ===== COMPANY STORY ===== */
+.company-story {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.company-story h2 {
+    color: #1a1a2e;
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.company-story h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e94560;
+    margin: 8px auto 0;
+}
+
+.company-story p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.company-story p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+}
+
+.team-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e94560;
+    margin: 8px auto 0;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* ===== TEAM CARD ===== */
+.team-card {
+    background: white;
+    width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px 18px 25px;
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.team-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e94560;
+    margin-bottom: 12px;
+}
+
+.team-card h3 {
+    color: #1a1a2e;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.team-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.team-card ul li {
+    color: #555;
+    font-size: 13px;
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.team-card ul li::before {
+    content: "✔";
+    color: #e94560;
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links li a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .about-header h1 {
+        font-size: 28px;
+    }
+
+    .company-story {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+
+    .company-story h2 {
+        font-size: 22px;
+    }
+
+    .team-container {
+        gap: 15px;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .about-header h1 {
+        font-size: 24px;
+    }
+
+    .about-header p {
+        font-size: 15px;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .team-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -13,14 +301,15 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <img src="images/logo.png" alt="SneakerHub Logo">
+            <img src="logo.jpg" alt="SneakerHub Logo">
         </div>
 
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Services</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a class="active" href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -28,14 +317,14 @@
 <!-- ABOUT HEADER -->
 <section class="about-header">
     <h1>ABOUT US</h1>
-    <p>Learn more about SneakerHub and our journey</p>
+    <p>Learn more about KickStart and our journey</p>
 </section>
 
 <!-- COMPANY STORY -->
 <section class="company-story">
     <h2>Company Story</h2>
     <p>
-        SneakerHub was created as a one-stop online destination for sneaker lovers to discover authentic footwear from the world's leading brands. Our goal is to provide customers with an easy, convenient, and enjoyable shopping experience by bringing together a wide variety of sneakers from brands such as Nike, Adidas, New Balance, Puma, Converse, Vans, ASICS, and Jordan in one place.
+        KickStart was created as a one-stop online destination for sneaker lovers to discover authentic footwear from the world's leading brands. Our goal is to provide customers with an easy, convenient, and enjoyable shopping experience by bringing together a wide variety of sneakers from brands such as Nike, Adidas, New Balance, Puma, Converse, Vans, ASICS, and Jordan in one place.
     </p>
 
     <p>
@@ -104,10 +393,10 @@
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 SneakerHub. All Rights Reserved.</p>
-</footer>
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    <p>© 2026 KickStart. All rights reserved.</p>
+</div>
 
 </body>
 </html>
