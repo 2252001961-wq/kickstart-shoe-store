@@ -4,9 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KickStart - Casual Sneakers</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#1f1e35;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 70px;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+        }
+
+        .logo img{
+            width:70px;
+            margin-right:10px;
+        }
+
+        .logo h2{
+            color:white;
+            font-size:36px;
+        }
+
+        .logo span{
+            color:#ef476f;
+        }
+
+        .nav-links{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            font-size:20px;
+            padding:10px 20px;
+            border-radius:8px;
+            transition:.3s;
+        }
+
+        .nav-links a:hover{
+            background:#ef476f;
+        }
+
+        .active,
+        .contact-btn{
+            background:#ef476f;
+        }
+
+        /* TITLE */
+
+        .title{
+            text-align:center;
+            color:white;
+            margin:40px 0;
+            font-size:45px;
+        }
+
+        /* PRODUCT GRID */
+
+        .container{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:30px;
+            padding-bottom:40px;
+        }
+
+        .card{
+            background:white;
+            border-radius:15px;
+            text-align:center;
+            padding:20px;
+            box-shadow:0 6px 15px rgba(0,0,0,.15);
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 12px 25px rgba(0,0,0,.3);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        .card h3{
+            margin-top:15px;
+            color:#1f1e35;
+        }
+
+        .card p{
+            color:gray;
+            margin:8px 0;
+        }
+
+        .card h2{
+            color:#ef476f;
+            margin-bottom:15px;
+        }
+
+        .card button{
+            background:#1f1e35;
+            color:white;
+            border:none;
+            padding:12px 35px;
+            border-radius:30px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .card button:hover{
+            background:#ef476f;
+            transform:scale(1.05);
+        }
+
+        footer{
+            background:#17162b;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:40px;
+        }
+
+        /* Responsive */
+
+        @media(max-width:1000px){
+            .container{
+                grid-template-columns:repeat(2,1fr);
+            }
+        }
+
+        @media(max-width:600px){
+
+            .navbar{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .container{
+                grid-template-columns:1fr;
+            }
+
+            .title{
+                font-size:32px;
+            }
+
+        }
+    </style>
+
+</head>
 <body>
 
 <header>
@@ -28,255 +205,84 @@
     </nav>
 </header>
 
+<main>
+
 <h1 class="title">Our Casual Sneakers Collection</h1>
 
-<div class="container">
+<section class="container">
 
-    <div class="card">
-        <img src="Dior x Jordan.jpg">
+    <article class="card">
+        <img src="Dior x Jordan.jpg" alt="Dior x Jordan Sneaker">
         <h3>Dior x Jordan</h3>
         <p>Cloud Blue</p>
         <h2>RM 2,499</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="adidas(orange).jpg">
+    <article class="card">
+        <img src="adidas(orange).jpg" alt="Orange Adidas Sneaker">
         <h3>Adidas</h3>
         <p>Orange</p>
         <h2>RM 399</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="louisVuiton.jpg">
+    <article class="card">
+        <img src="louisVuiton.jpg" alt="Louis Vuitton Sneaker">
         <h3>Louis Vuitton</h3>
         <p>Dark Blue & White</p>
         <h2>RM 3,799</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="adidas.jpg">
+    <article class="card">
+        <img src="adidas.jpg" alt="Grey Adidas Sneaker">
         <h3>Adidas</h3>
         <p>Fog Grey</p>
         <h2>RM 459</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="maroon.jpg">
+    <article class="card">
+        <img src="maroon.jpg" alt="Maroon Nike Air Sneaker">
         <h3>Nike Air</h3>
         <p>Maroon</p>
         <h2>RM 499</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="mustard.jpg">
+    <article class="card">
+        <img src="mustard.jpg" alt="Mustard Nike Air Sneaker">
         <h3>Nike Air</h3>
         <p>Mustard</p>
         <h2>RM 499</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="purple.jpg">
+    <article class="card">
+        <img src="purple.jpg" alt="Purple Adidas Sneaker">
         <h3>Adidas</h3>
         <p>Purple</p>
         <h2>RM 429</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-    <div class="card">
-        <img src="green.jpg">
+    <article class="card">
+        <img src="green.jpg" alt="Green Nike Air Sneaker">
         <h3>Nike Air</h3>
         <p>Green</p>
         <h2>RM 499</h2>
         <button>Buy Now</button>
-    </div>
+    </article>
 
-</div>
+</section>
+
+</main>
 
 <footer>
-    <p>© 2026 KickStart. All rights reserved.</p>
+    <p>&copy; 2026 KickStart. All rights reserved.</p>
 </footer>
 
 </body>
 </html>
-
----CSS----
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#1f1e35;
-}
-
-/* NAVBAR */
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 70px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-}
-
-.logo img{
-    width:70px;
-    margin-right:10px;
-}
-
-.logo h2{
-    color:white;
-    font-size:36px;
-}
-
-.logo span{
-    color:#ef476f;
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:20px;
-    padding:10px 20px;
-    border-radius:8px;
-}
-
-.active,
-.contact-btn{
-    background:#ef476f;
-}
-
-/* TITLE */
-
-.title{
-    text-align:center;
-    color:white;
-    margin:40px 0;
-    font-size:45px;
-}
-
- /* ===== CONTAINER ===== */
-.container {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-
-}
-
-/* ===== CARD ===== */
-.card {
-    background: white;
-    width: 240px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-align: center;
-    padding: 18px 15px 20px 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.card h3 {
-    font-size: 18px;
-    color: #1a1a2e;
-    margin-top: 12px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #888;
-    margin: 4px 0 8px 0;
-}
-.card h2 {
-    font-size: 20px;
-    color: #e94560;
-    margin: 8px 0 12px 0;
-}
-
-.card button {
-    background: #1a1a2e;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 15px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.card button:hover {
-    background: #e94560;
-    transform: scale(1.05);
-}
-footer{
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-
-/* Responsive */
-
-@media(max-width:1000px){
-
-.container{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:600px){
-
-.navbar{
-flex-direction:column;
-gap:20px;
-}
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.container{
-grid-template-columns:1fr;
-}
-
-.title{
-font-size:32px;
-}
-
-}
 
